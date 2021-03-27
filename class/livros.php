@@ -73,12 +73,28 @@
                                  "descricao"=>$this->getDescricao()      
          ));
 
-
     }
 
 
+    public static function getList(){
 
 
+        $sql = new sql();
+
+       return  $sql->select("SELECT * FROM livros ORDER BY nome;");
+
+
+    }
+
+    public static function buscar($nome){
+        $sql = new sql();
+
+
+       return $sql->select("SELECT *FROM livros WHERE nome LIKE :SEARCH ORDER BY nome",array(
+         ':SEARCH'=>"%".$nome."%"));
+
+        
+    }
 
 
 

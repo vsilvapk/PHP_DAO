@@ -13,10 +13,17 @@ $livros = $sql->select("SELECT *FROM livros");
 echo json_encode($livros);*/
 
 
-    $livros = new livros();
+  ;
 
-    $livros->loadByid(8);
+   // $livros->loadByid(8);
 
-    echo $livros;
+  //  echo $livros;
+
+$livros = livros::buscar("harry");
+
+echo json_encode($livros);
+
+
+
 
 ?>
